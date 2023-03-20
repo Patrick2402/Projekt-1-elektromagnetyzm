@@ -7,7 +7,6 @@ c = 3.0e8
 wave_len = c/frequency
 data = []
 
-
 def generating_params(itterations):
     for it in range(itterations):
         shape_size        = round(uniform(0.0000001 , wave_len / 2),8)
@@ -23,12 +22,6 @@ def generating_params(itterations):
     print('Sn: ',score["sn"])
     print('All holes: ',score["sps"]**2)
     print('Quality: ',score["quality"])
-
-
-
-
-
-    
 
 def find_project_req(data):
     try:
