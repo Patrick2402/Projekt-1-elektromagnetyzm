@@ -9,7 +9,7 @@ data = []
 
 def generating_params(itterations):
     for it in range(itterations):
-        shape_size        = round(uniform(0.0000001 , wave_len / 2),8)
+        shape_size        = round(uniform(0.000001 , wave_len / 2),7)
         #separation_size  = round(uniform(0.0000001 , wave_len / 10), 8)
         separation_size   = wave_len / 10
         neighbors         = getNeighbor(shape_size=shape_size, separation_size=separation_size)
