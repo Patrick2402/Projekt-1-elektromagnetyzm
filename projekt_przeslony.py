@@ -53,7 +53,7 @@ def for_50_cm(shape_size,separation_size):
     return xn
 
 def count_s(shape_size,neighbors):
-    s = 20*log10((wave_len/(2*shape_size))) - 20*log10(sqrt(neighbors))
+    s = 20*log10((wave_len/(2*shape_size))) - 20*log10(sqrt(neighbors*2))
     return s
 
 
