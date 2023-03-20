@@ -16,12 +16,7 @@ def generating_params(itterations):
         infos             = {"shape_size": shape_size, "separation_size": separation_size, "neighbors": neighbors,"sn":count_s(shape_size=shape_size,neighbors=neighbors), "sps": for_50_cm(shape_size=shape_size,separation_size=separation_size),"quality":shape_size*for_50_cm(shape_size=shape_size,separation_size=separation_size)}
         data.append(infos)
     score = (find_project_req(data))
-    print('Shape size: ',score["shape_size"]*100)
-    print('Separation size: ',score["separation_size"])
-    print('Neighbors: ',score["neighbors"])
-    print('Sn: ',score["sn"])
-    print('All holes: ',score["sps"]**2)
-    print('Quality: ',score["quality"])
+    show_results(score)
 
 def find_project_req(data):
     try:
@@ -32,6 +27,15 @@ def find_project_req(data):
         print("Any Candidate pass project requirements")
         exit(0)
     
+
+def show_results(score):
+    print('Shape size: ',score["shape_size"])
+    print('Separation size: ',score["separation_size"])
+    print('Neighbors: ',score["neighbors"])
+    print('Sn: ',score["sn"])
+    print('All holes: ',score["sps"]**2)
+    print('Quality: ',score["quality"])   
+
 def getNeighbor(shape_size, separation_size):
     overallsize = shape_size/2
     n = 0 
