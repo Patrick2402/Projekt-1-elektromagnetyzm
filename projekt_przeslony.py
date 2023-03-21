@@ -10,7 +10,7 @@ data = []
 def generating_params(itterations):
     for it in range(itterations):
         shape_size        = round(uniform(0.000001 , wave_len / 2),7)
-        #separation_size  = round(uniform(0.0000001 , wave_len / 10), 8)
+        #separation_size  = round(uniform(0.001 , wave_len / 10), 5)
         separation_size   = wave_len / 10
         neighbors         = getNeighbor(shape_size=shape_size, separation_size=separation_size)
         infos             = {"shape_size": shape_size, "separation_size": separation_size, "neighbors": neighbors,"sn":count_s(shape_size=shape_size,neighbors=neighbors), "sps": for_50_cm(shape_size=shape_size,separation_size=separation_size),"quality":shape_size*for_50_cm(shape_size=shape_size,separation_size=separation_size)}
@@ -40,7 +40,11 @@ def getNeighbor(shape_size, separation_size):
     overallsize = shape_size/2
     n = 0 
     while overallsize <= wave_len / 2:
-        overallsize += separation_size + shape_size
+        overallsize += separation_size
+        if overallsize >= wave_len / 2:
+            break
+        else:
+            overallsize += shape_size
         n += 1
     return n
 
